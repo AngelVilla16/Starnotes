@@ -1,0 +1,161 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    background: #434343; 
+    font-family: sans-serif;
+}
+contenedorprincipal{
+    background: midnightblue;
+    width: 100%;
+    height: 100%;
+}
+header{
+    color: white   ;
+    background: linear-gradient(90deg, #000046,#1CB5E0);
+    width: 100%;
+    height: auto;
+    padding: auto;
+}
+.agregar{
+    border: 1px solid black;
+    margin: auto;
+    align-items: center;
+    background-color: #FFCCF2;
+    width: 10vh;
+    overflow:hidden;
+}
+.agregar:hover{
+    background: linear-gradient(90deg, #f4c4f3,#fc67fa);
+}
+.formulario{
+    visibility: hidden;
+}
+.formulario.active{
+    visibility: visible;
+    background: linear-gradient(90deg,#0575E6,#021B79) ;
+    height: 100%;
+    width: 100%;
+    width: 25dvw;
+    height: 28dvh;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column ;
+     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: auto;
+    flex-wrap: wrap;
+
+
+}
+form{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-self:center;
+   
+
+
+}
+button{
+    margin: auto;
+    margin-top: 5px;
+    padding: auto;
+    width: 10dvw;
+    height: 3dvh;
+    
+    border-radius: 5px;
+}
+.pendientebutton{
+   
+    margin: auto;
+    margin-top: 5px;
+    padding: auto;
+    font-size: small;
+    background: white;
+    color: #2F80ED;
+    border-radius: 10px;
+}
+.cerrar{
+    margin:auto;
+    margin-top: 5px;
+    padding: auto;
+    font-size: medium;
+    background: white;
+    color: #2F80ED;
+    border-radius: 10px;
+}
+.cerrar:hover{
+    background: linear-gradient(#56CCF2,#2F80ED);
+    color: white;
+}
+.pendientebutton:hover{
+    background: linear-gradient(#56CCF2,#2F80ED);
+    color: white;
+}
+.pendientes{
+    margin: 10px;
+    padding: 10px;
+    width: 100dvw;
+    height: 50dvh;
+    background: #121212;
+    
+}
+.pendiente{
+  width: 100%;
+  max-width: 520px;
+  padding: 16px;
+  margin: 12px auto;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pendiente-header{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+    border-bottom: 3px solid black;
+    border-bottom-width:100% ;
+    font-size: larger;
+    text-align: center;
+    
+}
+@media(max-width:480px){
+    .contenedorprincipal{
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .formulario.active{
+        width: 60dvw;
+
+    }
+    .pendientebutton{
+        width: 30dvw;
+        font-size: small;
+    }
+    .cerrar{
+        width: 20dvw;
+        font-size: medium;
+    }
+}

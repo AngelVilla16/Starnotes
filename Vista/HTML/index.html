@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta name="description" content="Esta es una aplicacion creada por AstroSoft para el gestion de tareas. To Do List">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../CSS/estilomain.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+       <div class="contenedorprincipal">
+         <header>
+            <h1> Bienvenido a Star notes una app para trazar tu camino de pendientes.</h1>
+            <button class="agregar" onclick="document.querySelector('.formulario').classList.add('active')"> Agregar </button>
+        </header>
+        <main>
+            <div class="pendientes" id="pendientes-principal">
+
+            </div>
+
+        </main>
+        <footer>
+
+        </footer>
+
+        <div class="formulario" onclick="this.classList.remove('active')">
+            <form action="../../Modelo/enviar.php" onclick="event.stopPropagation()" method="POST">
+                <label for="Titulo"> Titulo: </label>
+                <input type="text" id="titulo" name="titulo" placeholder="Pendiente" required>
+                <label for="descripcion"> Descripción: </label>
+                <textarea name="descripcion" id="desc" required> </textarea>
+                <button class="pendientebutton" type="submit">Agregar pendiente</button>
+                <button class="cerrar" type="button" onclick="this.closest('.formulario').classList.remove('active')"> Cerrar </button>
+            </form>
+            
+        </div>
+        
+       </div>
+       <script src="../JS/pendiente.js"></script>
+    </body>
+</html>
