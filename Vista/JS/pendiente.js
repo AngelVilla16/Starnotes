@@ -25,6 +25,9 @@ function mostrarPendiente(pendientes){
         div.dataset.id = p.Idpendiente;
 
         div.innerHTML= ` <div class="pendiente-header">
+       
+        <button class="btnEliminar" onclick="eliminar(${p.Id})" type="submit" > x </button>
+       
         ${p.Titulo}
         </div>
         <div class="pendiente-info">
@@ -40,3 +43,27 @@ function mostrarPendiente(pendientes){
 document.addEventListener("DOMContentLoaded", () => {
     traerpendiente();
 });
+
+async function  eliminar(id){
+    if(!confirm("Seguro de que deseas eliminar esta nota?")){
+      return;  
+    }
+
+    try{
+        const res = await fetch("../../Modelo/borrarnota.php",{
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({id})
+
+        });
+        const data = await res.json();
+
+        if(data.success){
+            alert("Nota eliminada efectivamente");
+            traerpendiente();
+        }
+    }
+    catch (e){
+        console.log("Error al eliminar ", e);
+    }
+}
